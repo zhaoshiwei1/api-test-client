@@ -17,11 +17,11 @@ public class HttpUtility
 		
 	}
 	
-	public StringBuffer Post_Util(String js, String base_url, String url)
+	public StringBuffer Post_Util(String js,String url)
 	{
 		StringBuffer buffer=new StringBuffer();
 		try{
-				URL serverUrl= new URL(base_url+url);
+				URL serverUrl= new URL(url);
 				URLConnection uct= serverUrl.openConnection();
 				HttpURLConnection hutc=(HttpURLConnection)uct;	
 				// 设置报文参数
