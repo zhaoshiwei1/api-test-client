@@ -1,6 +1,7 @@
 package com.api.client.http;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -58,12 +59,48 @@ public class HttpUtility
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		
+			
 		return buffer;
 	}
 	
 	public StringBuffer Get_Util(String url)
 	{
-		return null;
+		StringBuffer buffer=new StringBuffer();
+		BufferedReader in = null;
+		try {
+	            URL serverurl = new URL(url);
+	            HttpURLConnection conn = (HttpURLConnection)serverurl.openConnection();
+	            conn.setRequestMethod("GET");
+	            //Get请求不需要DoOutPut
+	            conn.setDoOutput(false);
+	            conn.setDoInput(true);
+	            //设置连接超时时间和读取超时时间
+	            conn.setConnectTimeout(10000);
+	            conn.setReadTimeout(10000);
+	            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+	            //连接服务器  
+	            conn.connect();  
+	            // 取得输入流，并使用Reader读取  
+	            in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+	            String line;
+	            while ((line = in.readLine()) != null) {
+	                buffer.append(line);
+	            }
+        	} catch (Exception e) 
+        	{
+        		e.printStackTrace();
+        	}
+        //关闭输入流
+        finally{
+	            try{
+	                if(in!=null){
+	                    in.close();
+	                }
+	            }
+	            catch(IOException ex){
+	                ex.printStackTrace();
+	            }
+        	}
+		return buffer;
 	}
 }
