@@ -40,12 +40,14 @@ public class DataBaseUtility
 		          for (int i = 0; i < metaData.getColumnCount(); i++) 
 		          {	  Map info = new HashMap();  
 		              // resultSet数据下标从1开始  
-		              String columnName = metaData.getColumnName(i + 1);  
-//		              System.out.print(columnName + "\t");  
-//		              System.out.print(rs.getString(columnName)+"\n");
-		              info.put("name", columnName);
-		              info.put("value", rs.getString(columnName));
-		              list.add(info);
+		              String columnName = metaData.getColumnName(i + 1); 
+		              if(!(rs.getString(columnName)==null))
+		              {
+			              info.put("name", columnName);
+			              info.put("value", rs.getString(columnName));
+			              list.add(info);
+		              }
+	
 		          }  
 		          full_map.add(list);
 		      }
