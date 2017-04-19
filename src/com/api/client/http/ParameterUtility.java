@@ -22,7 +22,7 @@ public class ParameterUtility
     	 {
     		 if(this.filter_not_parameter(p.get("name").toString()))
     		 {
-    			 if((p.get("value").toString()).equals("EMPTY"))
+    			 if((p.get("value").toString()).equals(GlobalDefine.TC_EMPTY))
     			 {
             		 jo.put(p.get("name").toString(), "");
     			 }else
@@ -43,7 +43,7 @@ public class ParameterUtility
 		{
 			 if(this.filter_not_parameter(p.get("name").toString()))
 	   		 {
-				if(p.get("value").toString().equals("EMPTY"))
+				if(p.get("value").toString().equals(GlobalDefine.TC_EMPTY))
 				{
 					buf.append(p.get("name").toString());
 					buf.append("=");

@@ -11,6 +11,11 @@ public class GlobalDefine
 	public static final String TC_METHOD = "HTTP_METHOD";
 	
 	/*
+	 * 数据库中NULL代表该测试用例无此字段，“EMPTY”代表有此字段但是值为空
+	 */
+	public static final String TC_EMPTY = "EMPTY";
+	
+	/*
 	 * 定义sqlite3 数据库文件地址和表名称
 	 */
 	public static final String DB_PATH = "F:/backend-api-database/testCase.db3";
