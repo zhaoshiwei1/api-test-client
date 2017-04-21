@@ -3,6 +3,8 @@ package com.api.client.http;
 import java.util.List;
 import java.util.Map;
 
+import com.api.client.globaldefine.GlobalDefine;
+
 public class HttpRun 
 {
 	public HttpRun()
@@ -12,7 +14,40 @@ public class HttpRun
 	
 	public StringBuffer run(List<Map> lis)
 	{
+		String id = null;
+		String case_name = null; 
+		String url = null;
+		String http_method = null;
+		for(Map p : lis)
+		{
+			switch (p.get("name").toString())
+			{
+				case GlobalDefine.TC_ID:
+					id = p.get("value").toString();
+					break;
+				case GlobalDefine.TC_NAME:
+					case_name = p.get("value").toString();
+					break;
+				case GlobalDefine.TC_URL:
+					url = p.get("value").toString();
+					break;
+				case GlobalDefine.TC_METHOD:
+					http_method = p.get("value").toString();
+					break;
+				default:
+					break;
+			}
+		}
+		
+			
 		
 		return null;
 	}
+
+	private StringBuffer format(List<Map> lis)
+	{
+		StringBuffer buf = new StringBuffer("");
+		return null;
+	}
+
 }
