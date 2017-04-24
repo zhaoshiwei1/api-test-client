@@ -20,4 +20,15 @@ public class GlobalDefine
 	 */
 	public static final String DB_PATH = "F:/backend-api-database/testCase.db3";
 	public static final String TC_TABLE = "TESTCASE";
+	
+	/*
+	 * 定义BaseUrl
+	 */
+	public static final String BASE_URIL = "";
+	
+	/*
+	 * 定义HTTP方法
+	 */
+	public static final String GET = "GET";
+	public static final String POST = "POST";
 }

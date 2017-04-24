@@ -3,6 +3,8 @@ package com.api.client.http;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONException;
+
 import com.api.client.globaldefine.GlobalDefine;
 
 public class HttpRun 
@@ -14,6 +16,9 @@ public class HttpRun
 	
 	public StringBuffer run(List<Map> lis)
 	{
+		ParameterUtility pu = new ParameterUtility();
+		HttpUtility hu = new HttpUtility();
+		
 		String id = null;
 		String case_name = null; 
 		String url = null;
@@ -39,9 +44,22 @@ public class HttpRun
 			}
 		}
 		
-			
+		String URL = GlobalDefine.BASE_URIL + url;
+		switch (http_method)
+		{
+			case GlobalDefine.GET:
+				return hu.Get_Util(pu.BuildGetUrl(lis, URL));
+			case GlobalDefine.POST:
+				try {
+					return hu.Post_Util(pu.BuildJson(lis), URL);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			default:
+				return new StringBuffer("Err MSG: /n/t"+case_name+"/n/t"+url+"/n/t"+http_method+"/n");
+		}
 		
-		return null;
 	}
 
 	private StringBuffer format(List<Map> lis)
