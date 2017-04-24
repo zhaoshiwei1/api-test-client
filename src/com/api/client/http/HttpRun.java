@@ -45,11 +45,14 @@ public class HttpRun
 		}
 		
 		String URL = GlobalDefine.BASE_URIL + url;
+		//System.out.print("Final URL" + URL + "\n");
 		switch (http_method)
 		{
 			case GlobalDefine.GET:
+				//System.out.print("GET\n");
 				return hu.Get_Util(pu.BuildGetUrl(lis, URL));
 			case GlobalDefine.POST:
+				//System.out.print("POST\n");
 				try {
 					return hu.Post_Util(pu.BuildJson(lis), URL);
 				} catch (JSONException e) {

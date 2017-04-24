@@ -19,6 +19,8 @@ public class HttpUtility
 	
 	public StringBuffer Post_Util(String js,String url)
 	{
+//		System.out.print(js+"\n");
+//		System.out.print(url+"\n");
 		StringBuffer buffer=new StringBuffer();
 		try{
 				URL serverUrl= new URL(url);

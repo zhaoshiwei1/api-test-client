@@ -24,7 +24,7 @@ public class GlobalDefine
 	/*
 	 * 定义BaseUrl
 	 */
-	public static final String BASE_URIL = "";
+	public static final String BASE_URIL = "http://sandbox.settlement.yongche.org";
 	
 	/*
 	 * 定义HTTP方法

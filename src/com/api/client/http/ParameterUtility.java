@@ -24,10 +24,10 @@ public class ParameterUtility
     		 {
     			 if((p.get("value").toString()).equals(GlobalDefine.TC_EMPTY))
     			 {
-            		 jo.put(p.get("name").toString(), "");
+            		 jo.put((p.get("name").toString()).toLowerCase(), "");
     			 }else
     			 {
-            		 jo.put(p.get("name").toString(), p.get("value").toString());
+            		 jo.put((p.get("name").toString()).toLowerCase(), p.get("value").toString());
     			 }
     		 }
     	 }

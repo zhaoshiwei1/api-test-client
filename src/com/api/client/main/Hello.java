@@ -20,13 +20,13 @@ public class Hello
 	{
 		HttpRun hr = new HttpRun();
 		List<List<Map>> l = new ArrayList();
-		System.out.print("Hello world!"+"\n");
+		//System.out.print("Hello world!"+"\n");
 		DataBaseUtility dbu = new DataBaseUtility(GlobalDefine.DB_PATH);
 		l = dbu.getData(GlobalDefine.TC_TABLE);
 		for (List m : l)
 		{
-			System.out.print(m.toString()+"\n");
-			System.out.print(hr.run(m).toString()+"\n");
+			//System.out.print(m.toString()+"\n");
+			System.out.print(hr.run(m).toString()+"\n\n");
 		}
 	}
 }
