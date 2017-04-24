@@ -60,7 +60,7 @@ public class ParameterUtility
 		}
 		String url_temp = buf.toString();
 		String url_final = url_temp.substring(0, url_temp.length()-1);
-		System.out.print(url_final+"\n");
+		//System.out.print(url_final+"\n");
 		return url_final;
 	}
 	

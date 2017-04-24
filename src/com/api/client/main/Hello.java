@@ -18,6 +18,7 @@ public class Hello
 {
 	public static void main(String[] args)
 	{
+		StringBuffer buf = new StringBuffer("");
 		HttpRun hr = new HttpRun();
 		List<List<Map>> l = new ArrayList();
 		//System.out.print("Hello world!"+"\n");
@@ -25,8 +26,11 @@ public class Hello
 		l = dbu.getData(GlobalDefine.TC_TABLE);
 		for (List m : l)
 		{
-			//System.out.print(m.toString()+"\n");
-			System.out.print(hr.run(m).toString()+"\n\n");
+			buf.append(m.toString());
+			buf.append("\r\n\r\n");
+			buf.append(hr.run(m).toString());
+			buf.append("\r\n\r\n\r\n");
 		}
+		log.out_to_file(GlobalDefine.LOG_PATH, buf);
 	}
 }

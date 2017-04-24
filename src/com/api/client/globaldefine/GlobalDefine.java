@@ -24,11 +24,15 @@ public class GlobalDefine
 	/*
 	 * 定义BaseUrl
 	 */
-	public static final String BASE_URIL = "http://sandbox.settlement.yongche.org";
+	public static final String BASE_URIL = "http://testing2.settlement.yongche.org";
 	
 	/*
 	 * 定义HTTP方法
 	 */
 	public static final String GET = "GET";
 	public static final String POST = "POST";
+	/*
+	 * 定义临时日志输出地址
+	 */
+	public static final String LOG_PATH = "F:/SETTLEMENT_API_TEST_SUITE.txt";
 }
