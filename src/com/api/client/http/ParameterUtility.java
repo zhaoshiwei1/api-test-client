@@ -45,13 +45,13 @@ public class ParameterUtility
 	   		 {
 				if(p.get("value").toString().equals(GlobalDefine.TC_EMPTY))
 				{
-					buf.append(p.get("name").toString());
+					buf.append(p.get("name").toString().toLowerCase());
 					buf.append("=");
 					buf.append("");
 					buf.append("&");
 				}else
 				{
-					buf.append(p.get("name").toString());
+					buf.append(p.get("name").toString().toLowerCase());
 					buf.append("=");
 					buf.append(p.get("value").toString());
 					buf.append("&");
@@ -59,7 +59,9 @@ public class ParameterUtility
 	   		 }
 		}
 		String url_temp = buf.toString();
-		return url_temp.substring(0, url_temp.length()-1);
+		String url_final = url_temp.substring(0, url_temp.length()-1);
+		System.out.print(url_final+"\n");
+		return url_final;
 	}
 	
 	private boolean filter_not_parameter(String name)

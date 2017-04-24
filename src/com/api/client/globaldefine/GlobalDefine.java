@@ -19,7 +19,7 @@ public class GlobalDefine
 	 * 定义sqlite3 数据库文件地址和表名称
 	 */
 	public static final String DB_PATH = "F:/backend-api-database/testCase.db3";
-	public static final String TC_TABLE = "TESTCASE";
+	public static final String TC_TABLE = "SETTLEMENT_TESTCASE";
 	
 	/*
 	 * 定义BaseUrl
