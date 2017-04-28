@@ -22,8 +22,11 @@ public class DataBaseUtility
 	public List<List<Map>> getData(String table_name)
 	{
 		String JDBC_String = "jdbc:sqlite:" + this.db_path;
-		String Select_SQL = "SELECT * FROM " + table_name +";";
-		//String Select_SQL = "SELECT * FROM SETTLEMENT_TESTCASE WHERE NAME = \""+"temp" + "\";";
+		String Select_SQL = "SELECT * FROM " + table_name;
+//			   Select_SQL = "SELECT * FROM SETTLEMENT_TESTCASE WHERE URL = \""+"/V1/Driveraccount/decOrderAmount" + "\""
+//																+"OR URL = \""+"/V1/Driveraccount/decRewardAmount"+"\""
+//																+"OR URL = \""+"/V1/Driveraccount/decAccountAdjustAmount"+"\""
+//																+"OR URL = \""+"/V1/Driveraccount/decAccountReward"+"\"";
 		Connection c = null;
 		Statement s = null;
 	    List full_map = new ArrayList();
